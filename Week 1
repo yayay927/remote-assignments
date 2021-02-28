@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lake Tahoe</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  
+  <body> 
+   
+    <header id="top" class="main-header">
+       <div class="website-title">Website Title</div>
+<!--      <span class="title">Journey Through the Sierra Nevada Mountains</span>-->
+    </header>
+    <h1>Welcome Message</h1>
+    <h2>Section Title</h2>
+      
+<!--      4 content boxes start-->
+      <div>
+        <div class="content-box1">
+          <p>
+            content box 1
+          </p>
+        </div>
+        <div class="content-box2">
+          <p>
+            content box 2
+          </p>
+        </div>
+        <div class="content-box3">
+          <p>
+            content box 3
+          </p>
+        </div>
+        <div class="content-box4">
+          <p>
+            content box 4
+          </p>
+        </div>
+       </div>
+<!-- 4 content boxes end-->
+      
+		<footer class="main-footer">
+			<p>call to action</p>
+		</footer>
+  </body>
+</html>
