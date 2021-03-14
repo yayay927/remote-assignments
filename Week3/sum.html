@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- Assignment 3 -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pick a Number</title>
+    </head>
+    <body>
+        <script>
+            function submitFunction(){
+                const xhr = new XMLHttpRequest();
+                const input = document.getElementById("input").value; 
+                xhr.open("GET", "/getData?number=" +input, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.status === 200 && xhr.readyState === 4) {
+		    	    document.getElementById("demo").innerHTML = xhr.responseText;
+		            } else {
+		            alert("Request failed. Status: " + xhr.status, "Please try again.");
+                    };
+                xhr.send();
+            }
+
+        </script>
+
+        <div id="demo">
+        <input id="input"></input>
+        <button id="submit" type="button" onclick="submitFunction()">submit</button>
+        </div>
+
+    </body>
+</html>
+
