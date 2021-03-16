@@ -1,3 +1,5 @@
+//<second version>
+
 function calculate(args){
   let result;
   if(args.op==="+"){
@@ -8,14 +10,41 @@ function calculate(args){
     result="Not supported";
   }return result;
 }
-//first way
-add(n1:3, n2:4);
 
-//second way
-var args ={
+let args1 ={
   n1:3,
-  n2:4
-}
+  n2:4,
+  op:"+"
+};
+
+let args2 ={}
+args2['n1']=3;
+args2['n2']=4;
+args2['op']="-";
+
+console.log(calculate(args1));
+console.log(calculate(args2));
+
+
+//<first version>
+// function calculate(args){
+//   let result;
+//   if(args.op==="+"){
+//     result=args.n1+args.n2;
+//   }else if(args.op==="-"){
+//     result=args.n1-args.n2;
+//   }else{
+//     result="Not supported";
+//   }return result;
+// }
+// //first way
+// add(n1:3, n2:4);
+
+// //second way
+// let args ={
+//   n1:3,
+//   n2:4
+// }
 
 // Try to call calculate function correctly
 /*
