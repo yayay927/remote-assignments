@@ -1,32 +1,46 @@
 <!DOCTYPE html>
-<!-- Assignment 3 -->
+Assignment 3
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Pick a Number</title>
-    </head>
-    <body>
-        <script>
-            function submitFunction(){
-                const xhr = new XMLHttpRequest();
-                const input = document.getElementById("input").value; 
-                xhr.open("GET", "/getData?number=" +input, true);
-                xhr.onreadystatechange = function() {
-                    if (xhr.status === 200 && xhr.readyState === 4) {
-		    	    document.getElementById("demo").innerHTML = xhr.responseText;
-		            } else {
-		            alert("Request failed. Status: " + xhr.status, "Please try again.");
-                    };
-                xhr.send();
-                }
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pick a Number</title>
+</head>
+
+<body>
+    <script>
+        function submitFunction() {
+            const xhr = new XMLHttpRequest();
+            const input = document.getElementById("input").value;
+            xhr.open("GET", "/getData?number=" + input, true);
+            // xhr.open("GET", "http://localhost:3000/getData?number=10" +input, true);
+            console.log("1");
+            // xhr.onreadystatechange = function() {
+            xhr.onload = function () {
+                if (xhr.status === 200 && xhr.readyState === 4) {
+                    document.getElementById("demo").innerHTML = xhr.responseText;
+                } else {
+                    alert("Request failed. Status: " + xhr.status, "Please try again.");
+                };
             }
+            xhr.send();
+        }
+    </script>
 
-        </script>
-
-        <div id="demo">
+    <div id="demo">
         <input id="input"></input>
         <button id="submit" type="button" onclick="submitFunction()">submit</button>
-        </div>
+    </div>
 
-    </body>
+</body>
+
 </html>
+
+
+<!-- var xhr = new XMLHttpRequest(); // xhr 實體化
+xhr.open('get','https://soweb.kcg.gov.tw/open1999/ServiceRequestsQuery.asmx/ServiceRequestsQuery?startdate=&enddate=') // 開啟要取得的 AJAX 網址，資料來源: open1999
+xhr.send(null) // 告知不傳送任何資料
+xhr.onload = function() { // 確保資料有取得在執行....
+  var _data = JSON.parse(xhr.responseText); // 取得資料並轉成物件格式
+  ...
+} -->
